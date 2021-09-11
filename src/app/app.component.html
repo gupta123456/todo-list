@@ -1,0 +1,14 @@
+<div class="todos center">
+  <form (submit)="addTodo($event)">
+    <input [(ngModel)]="newTodo" (keyup.enter)="newTodo=''" class="textfield" name="newTodo"
+      placeholder="Add a task in TodoList">
+    <button type="submit" [disabled]="newTodo===''">Add Todo</button>
+  </form>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let todo of todos; let i=index">
+      <p>{{ todo.newTodo }}</p>
+      <button type="button" class="btn btn-danger" (click)="deleteTodo(i)" style="display: inline-block;">Delete
+        item</button>
+    </li>
+  </ul>
+</div>
